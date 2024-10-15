@@ -7,7 +7,6 @@ API_KEY = os.getenv('YOUTUBE_API_KEY','')
 
 
 def lambda_handler(event, context):
-    print("here")
     # Get channel username from the request parameters (or hardcode for testing)
     channel_name = event.get('queryStringParameters', {}).get('username', 'stakpak')
     # YouTube Data API URL to get channel info by username
