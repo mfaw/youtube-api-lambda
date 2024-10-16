@@ -31,7 +31,7 @@ data "archive_file" "lambda_zip" {
 resource "aws_lambda_function" "this" {
     filename = data.archive_file.lambda_zip.output_path
     function_name = "my-lambda-function"
-    handler = "index.handler"
+    handler = "youtube.lambda_handler"
     layers = [
         aws_lambda_layer_version.this.arn,
     ]
